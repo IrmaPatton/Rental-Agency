@@ -10,7 +10,9 @@ def open_file(filename):
 
 
 def file_list_split(file_str_list):
+    file_list = []
     for string in file_str_list:
         for characters in string:
-            string.strip('\n')  #get the \n off
-    return file_str_list
+            new_str = string.strip('\n')
+            file_list.append(new_str)
+    return file_list
