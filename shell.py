@@ -24,7 +24,8 @@ def show_what_to_rent():
 
 
 def main():
-    here
+    greet()
+    show_what_to_rent()
 
 
 if __name__ == '__main__':
