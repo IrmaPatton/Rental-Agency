@@ -1,1 +1,4 @@
-started
+Medium Spaceship, 5000, 10000, 100
+Podracers, 1000, 5000, 600
+Space Invaders, 4000, 8000, 900
+Star Destroyer, 10000, 100000, 2
