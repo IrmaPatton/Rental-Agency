@@ -10,6 +10,6 @@ def test_open_file():
     assert open_file('mock_file.txt') == ['cat\n', 'done\n', 'bang']
 
 
-def test_file_str_list_split():
+def test_file_list_split():
     file_str_list = ['cat\n', 'done\n', 'bang']
-    assert file_str_list_split(file_str_list) == ['cat', 'done', 'bang']
+    assert file_list_split(file_str_list) == ['cat', 'done', 'bang']
