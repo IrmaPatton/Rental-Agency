@@ -18,8 +18,13 @@ def file_list_split(file_str_list):
 
 
 def make_inventory_list(file_list):
-
+    # make file_list into a list with nested list
+    inventory = []
     for string in file_list:
-        string.split(',')
-
-    return
+        str_list = string.split(',')
+        name = str_list[0]
+        rent_rate = int(str_list[1])
+        replace_value = int(str_list[2])
+        stock = int(str_list[3])
+        inventory.append([name, rent_rate, replace_value, stock])
+    return inventory
