@@ -18,7 +18,6 @@ def file_list_split(file_str_list):
 
 
 def make_inventory_list(file_list):
-    # make file_list into a list with nested list
     inventory = []
     for string in file_list:
         str_list = string.split(',')
