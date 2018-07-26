@@ -12,7 +12,6 @@ def open_file(filename):
 def file_list_split(file_str_list):
     file_list = []
     for string in file_str_list:
-        for characters in string:
-            new_str = string.strip('\n')
-            file_list.append(new_str)
+        new_str = string.strip('\n')
+        file_list.append(new_str)
     return file_list
