@@ -38,5 +38,5 @@ def file_list_dictionary_setup(file_list):
             replace_value = int(values_str[(index_numb - 1):])
             in_stock_str = values_str[(index_numb + 1):]
             in_stock = int(in_stock_str)
-
-    return key, rental_rate, replace_value, in_stock
+            setup_list = [key, rental_rate, replace_value, in_stock]
+    return
