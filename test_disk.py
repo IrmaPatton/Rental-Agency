@@ -17,5 +17,5 @@ def test_file_list_split():
 
 def test_make_inventory_list():
     file_list = ['cat, 12, 12, 12', 'done, 1, 1, 1']
-    assert file_list_dictionary_setup(file_list) == [['cat', 12, 12, 12],
-                                                     ['done', 1, 1, 1]]
+    assert make_inventory_list(file_list) == [['cat', 12, 12, 12],
+                                              ['done', 1, 1, 1]]
