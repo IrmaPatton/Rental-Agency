@@ -1,20 +1,19 @@
 def format_rent_stuff(inventory):
-    print_this = print('''SPACE THEMED VEHICLES
-    1 - Medium Spaceship:
-            - Rental rate for a month: $5000
-            - Deposit: $1000
-            - Left in stock; {}
-    2 - Podracers:
-            - Rental rate for 5 days: $1000
-            - Deposit: $500
-            - Left in stock: {}
-    3 - Space Invader:
-            - Rental rate for a week: $4000
-            - Deposit: $800
-            - Left in stock: {}
-    4 - Star Destroyer:
-            - Rental rate for a 5 days: $10000
-            - Deposit: $10000
-            - Left in stock: {}'''.format(inventory[0[3]], inventory[1[3]], inventory[2[3]], inventory[3[3]])
-
-    return print_this
+    print('''SPACE THEMED VEHICLES
+1 - Medium Spaceship:
+        - Rental rate for a month: $5000
+        - Deposit: $1000
+        - Left in stock: {}
+2 - Podracers:
+        - Rental rate for 5 days: $1000
+        - Deposit: $500
+        - Left in stock: {}
+3 - Space Invader:
+        - Rental rate for a week: $4000
+        - Deposit: $800
+        - Left in stock: {}
+4 - Star Destroyer:
+        - Rental rate for a 5 days: $10000
+        - Deposit: $10000
+        - Left in stock: {}'''.format(inventory[0][3], inventory[1][3],
+                                      inventory[2][3], inventory[3][3]))
