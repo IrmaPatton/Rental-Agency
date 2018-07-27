@@ -8,12 +8,20 @@ def greet():
 The space themed vehicle rental company that reaches for the stars.''')
 
 
-def show_what_to_rent():
+def make_inventory():
+    inventory = disk_main()
+    return inventory
+
+
+def show_what_to_rent(inventory):
+    formated_inventory = format_rent_stuff(inventory)
+    return formated_inventory
 
 
 def main():
     greet()
-    show_what_to_rent()
+    inventory = make_inventory()
+    show_what_to_rent(inventory)
 
 
 if __name__ == '__main__':
