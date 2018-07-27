@@ -27,3 +27,11 @@ def make_inventory_list(file_list):
         stock = int(str_list[3])
         inventory.append([name, rent_rate, replace_value, stock])
     return inventory
+
+
+def disk_main():
+    file_name = inventory.txt
+    file_str_list = open_file(file_name)
+    file_list = file_list_split(file_str_list)
+    inventory = make_inventory_list(file_list)
+    return inventory
