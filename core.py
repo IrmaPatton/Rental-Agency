@@ -15,5 +15,16 @@ def format_rent_stuff(inventory):
 4 - Star Destroyer:
         - Rental rate for a 5 days: $10000
         - Deposit: $10000
-        - Left in stock: {}'''.format(inventory[0][3], inventory[1][3],
-                                      inventory[2][3], inventory[3][3]))
+        - Left in stock: {}
+5 - Exit program'''.format(inventory[0][3], inventory[1][3], inventory[2][3],
+                           inventory[3][3]))
+
+
+def rent_input_check():
+    #function that checks if input is a number 1 - 5
+    input_number = input('What do you want to rent?: ')
+    while True:
+        if input_number.isdigit():
+            print('It\'s a number')
+        else:
+            print('Something is wrong with me')
