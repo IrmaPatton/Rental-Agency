@@ -1,4 +1,5 @@
 from core import *
+from bacca.test import *
 
 
 def test_format_rent_stuff():
@@ -20,3 +21,8 @@ def test_format_rent_stuff():
         - Rental rate for a 5 days: $10000
         - Deposit: $10000
         - Left in stock: 15''')
+
+
+def test_rent_input_check():
+    input_str = '3'
+    assert rent_input_check(input_str)
