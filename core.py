@@ -21,12 +21,12 @@ def format_rent_stuff(inventory):
 
 
 def rent_input():
-    rent_str = input('What would you like to rent? ')
+    rent_str = input('''
+What would you like to rent? ''')
     return rent_str
 
 
 def rent_input_check(input_str):
-    #function that checks if input is a number 1 - 5
     if input_str.isdigit():
         if input_str == '1':
             return input_str
@@ -39,8 +39,19 @@ def rent_input_check(input_str):
         elif input_str == '5':
             return input_str
         else:
-            print('''
-Try again with a number 1 - 5.''')
+            None
     else:
-        print('''
-Try again with a number 1 - 5.''')
+        None
+
+
+#def rent_time(input_str):
+#    if input_str == '5':
+#        exit()
+#    elif input_str == '1':
+#        charged =
+#    elif input_str == '2':
+#        here
+#    elif input_str == '3':
+#        here
+#    else: # if it '4'
+#        here
