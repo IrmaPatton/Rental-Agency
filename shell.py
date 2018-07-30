@@ -30,6 +30,10 @@ Try again with a number 1 - 5.''')
             return input_number
 
 
+def rent_time(user_number, inventory):
+    number = user_number
+
+
 def main():
     greet()
     inventory = make_inventory()
