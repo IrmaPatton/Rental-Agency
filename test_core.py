@@ -1,5 +1,5 @@
 from core import *
-from bacca.test import *
+from bcca.test import *
 
 
 def test_format_rent_stuff():
@@ -23,6 +23,7 @@ def test_format_rent_stuff():
         - Left in stock: 15''')
 
 
+@with_inputs
 def test_rent_input_check():
     input_str = '3'
     assert rent_input_check(input_str)
