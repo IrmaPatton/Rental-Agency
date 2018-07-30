@@ -28,8 +28,7 @@ def test_rent_input():
     assert rent_input() == 'cat'
 
 
-def test_rent_input_not_number():
-    assert rent_input() == print('''
-Try again with a number 1 - 5.
-
-What do you want to rent?: ''')
+def test_rent_input_check_not_number():
+    rent_str = 'dog'
+    assert rent_input_check(rent_str) == print('''
+Try again with a number 1 - 5.''')
