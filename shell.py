@@ -19,14 +19,22 @@ def show_what_to_rent(inventory):
     return formated_inventory
 
 
-def user_input():
-    #function that lets user pick what to rent for exit program
+def user_rent_input():
+    while True:
+        input_str = rent_input()
+        if rent_input_check(input_str) == None:
+            print('''
+Try again with a number 1 - 5.''')
+        else:
+            input_number = input_str
+            return input_number
 
 
 def main():
     greet()
     inventory = make_inventory()
     show_what_to_rent(inventory)
+    user_number = user_rent_input()
 
 
 if __name__ == '__main__':
