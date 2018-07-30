@@ -44,33 +44,35 @@ def rent_input_check(input_str):
         None
 
 
-def change_invent_receipt(number, inventory):
-    # I'm not changing the inventory text file, i need to
-    if input_str == '5':
-        exit()
-    elif input_str == '1':
-        stock_number = inventory[0][3]
-        new_stock_number = stock_number - 1
-        inventory[0][3] = new_stock_number
-        deposit = 1000
-        charged = (inventory[0][1]) * .07
-        print(f'''Farspace Rental Company
--Reach for the Stars!-
-        Price - ${charged}
-        Deposit - ${deposit}
--Don't forget to return it in a month.-''')
-    elif input_str == '2':
-        stock_number = inventory[1][3]
-        new_stock_number = stock_number - 1
-        inventory[1][3] = new_stock_number
-        deposit = 500
-        charged = (inventory[1][1]) * .07
-        print(f'''Farspace Rental Company
--Reach for the Stars!-
-        Price - ${charged}
-        Deposit - ${deposit}
--Don't forget to return it in 5 days.-''')
-    elif input_str == '3':
-        here
-    else:  # if it '4'
-        here
+#
+#def change_invent_receipt(number, inventory):
+#    # I'm not changing the inventory text file, i need to
+#    if input_str == '5':
+#        exit()
+#    elif input_str == '1':
+#        stock_number = inventory[0][3]
+#        new_stock_number = stock_number - 1
+#        inventory[0][3] = new_stock_number
+#        deposit = 1000
+#        charged = (inventory[0][1]) * .07
+#        print(f'''Farspace Rental Company
+#-Reach for the Stars!-
+#        Price - ${charged}
+#        Deposit - ${deposit}
+#-Don't forget to return it in a month.-''')
+#    elif input_str == '2':
+#        stock_number = inventory[1][3]
+#        new_stock_number = stock_number - 1
+#        inventory[1][3] = new_stock_number
+#        deposit = 500
+#        charged = (inventory[1][1]) * .07
+#        print(f'''Farspace Rental Company
+#-Reach for the Stars!-
+#        Price - ${charged}
+#        Deposit - ${deposit}
+#-Don't forget to return it in 5 days.-''')
+#    elif input_str == '3':
+#        here
+#    else:  # if it '4'
+#        here
+#
