@@ -23,6 +23,13 @@ def test_format_rent_stuff():
         - Left in stock: 15''')
 
 
-@with_inputs('')
+@with_inputs('cat')
+def test_rent_input():
+    assert rent_input() == 'cat'
+
+
 def test_rent_input_not_number():
-    assert rent_input_check(input_str)
+    assert rent_input() == print('''
+Try again with a number 1 - 5.
+
+What do you want to rent?: ''')
