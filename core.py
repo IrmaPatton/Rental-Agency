@@ -20,15 +20,22 @@ def format_rent_stuff(inventory):
                            inventory[3][3]))
 
 
-def rent_input():
-    input_str = input('What do you want to rent?: ')
-    return input_str
-
-
-def rent_input_check(input_str):
+def rent_input_check():
     #function that checks if input is a number 1 - 5
     while True:
-        if input_number.isdigit():
-            print('It\'s a number')
+        input_str = input('What do you want to rent?: ')
+        if input_str.isdigit():
+            if input_str == '1':
+                return input_str
+            elif input_str == '2':
+                return input_str
+            elif input_str == '3':
+                return input_str
+            elif input_str == '4':
+                return input_str
+            elif input_str == '5':
+                return input_str
+            else:
+                print('Try again with a number 1 - 5.')
         else:
-            print('Something is wrong with me')
+            print('Try again with a number 1 - 5.')
