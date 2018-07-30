@@ -20,7 +20,7 @@ def format_rent_stuff(inventory):
                            inventory[3][3]))
 
 
-def rent_input_check():
+def rent_input():
     #function that checks if input is a number 1 - 5
     while True:
         input_str = input('What do you want to rent?: ')
