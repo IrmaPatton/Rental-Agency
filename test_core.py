@@ -30,5 +30,9 @@ def test_rent_input():
 
 def test_rent_input_check_not_number():
     rent_str = 'dog'
-    assert rent_input_check(rent_str) == print('''
-Try again with a number 1 - 5.''')
+    assert rent_input_check(rent_str) == None
+
+
+def test_rent_input_check_if_number():
+    rent_str = '3'
+    assert rent_input_check(rent_str) == '3'
