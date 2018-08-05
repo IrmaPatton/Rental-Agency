@@ -31,7 +31,7 @@ Try again with a number 1 - 5.''')
 
 
 #def rent_time(user_number, inventory):
-#    number = user_number
+#    number = user_number blab blab blabs
 
 
 def main():
