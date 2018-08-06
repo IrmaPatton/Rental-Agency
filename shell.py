@@ -21,9 +21,9 @@ E - Employee''')
     while True:
         user_input = input('Are you a customer or employee? ')
         if user_input == 'C':
-            customer_side()
+            customer_side(inventory)
         elif user_input == 'E':
-            employee_side()
+            employee_side(inventory)
         else:
             print('Try typing in C or E.')
 
