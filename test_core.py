@@ -3,24 +3,26 @@ from bcca.test import *
 
 
 def test_format_rent_stuff():
-    rent_stuff = [[1, 3, 4, 15], [1, 1, 1, 15], [3, 3, 3, 15], [4, 4, 4, 15]]
-    assert format_rent_stuff(rent_stuff) == print('''SPACE THEMED VEHICLES
-1 - Medium Spaceship:
-        - Rental rate for a month: $5000
-        - Deposit: $1000
-        - Left in stock: 15
-2 - Podracers:
-        - Rental rate for 5 days: $1000
-        - Deposit: $500
-        - Left in stock: 15
-3 - Space Invader:
-        - Rental rate for a week: $4000
-        - Deposit: $800
-        - Left in stock: 15
-4 - Star Destroyer:
-        - Rental rate for a 5 days: $10000
-        - Deposit: $10000
-        - Left in stock: 15''')
+    fake_inventory = [['banana', 0, 20, 0], ['apple', 1, 20, 1],
+                      ['peanut', 2, 20, 2], ['grape', 3, 20, 3]]
+    assert format_rent_stuff(fake_inventory) == '''Rent Items:
+1 - banana:
+        - Rental rate: $0
+        - Deposit: $10
+        - Left in stock: 0
+2 - apple:
+        - Rental rate: $1
+        - Deposit: $10
+        - Left in stock: 1
+3 - peanut:
+        - Rental rate: $2
+        - Deposit: $10
+        - Left in stock: 2
+4 - grape:
+        - Rental rate: $3
+        - Deposit: $10
+        - Left in stock: 3
+5 - Exit program'''
 
 
 @with_inputs('cat')
