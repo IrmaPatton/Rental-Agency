@@ -1,26 +1,16 @@
 def format_rent_stuff(inventory):
-    deposit_1 = inventory[0][2] / 10
-    deposit_2 = inventory[1][2] / 10
-    deposit_3 = inventory[2][2] / 10
-    deposit_4 = inventory[3][2] / 10
-    print(f'''SPACE THEMED VEHICLES
-1 - {inventory[0][0]}:
-        - Rental rate: ${inventory[0][1]}
-        - Deposit: ${deposit_1}
-        - Left in stock: {inventory[0][3]}
-2 - {inventory[1][0]}:
-        - Rental rate: ${inventory[1][1]}
-        - Deposit: ${deposit_2}
-        - Left in stock: {inventory[1][3]}
-3 - {inventory[2][0]}:
-        - Rental rate: {inventory[2][1]}
-        - Deposit: ${deposit_3}
-        - Left in stock: {inventory[2][3]}
-4 - {inventory[3][0]}:
-        - Rental rate: ${inventory[3][1]}
-        - Deposit: ${deposit_4}
-        - Left in stock: {inventory[3][3]}
-5 - Exit program''')
+    print('Rent Items:')
+    for item in inventory:
+        deposit_cost = item[2] / 10
+        index_number = inventory.index(item)
+        name = item[0]
+        rental_cost = item[1]
+        stock = item[3]
+        print(f'{index_number} - {name}:')
+        print('    - Rental rate: $', rental_cost, sep="")
+        print('    - Deposit: $', deposit_cost, sep="")
+        print('    - Left in stock: ', stock, sep="")
+    print('E - Exit program')
 
 
 def rent_input():
