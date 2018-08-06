@@ -19,18 +19,19 @@ def customer_or_employee(inventory):
     print('''C - Customer
 E - Employee''')
     while True:
-    user_input = input('Are you a customer or employee? ')
-    if user_input == 'C':
-        customer_side()
-    elif user_input == 'E':
-        employee_side()
-    else:
-        print('Try typing in C or E.')
+        user_input = input('Are you a customer or employee? ')
+        if user_input == 'C':
+            customer_side()
+        elif user_input == 'E':
+            employee_side()
+        else:
+            print('Try typing in C or E.')
 
 
 def main():
     greet()
     inventory = make_inventory()
+    customer_or_employee(inventory)
 
 
 if __name__ == '__main__':
