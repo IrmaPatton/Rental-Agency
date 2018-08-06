@@ -14,7 +14,10 @@ def format_rent_stuff(inventory):
 
 
 def renting(inventory):
-    here
+    # need to know how much stuff in inventory, to tell if user_input in good
+    item_count = 0
+    for item in inventory:
+        item_count + 1
 
 
 def customer_side(inventory):
@@ -24,7 +27,7 @@ Y - Return''')
         user_input = input('Are you renting or returning? ')
         if user_input == 'X':
             format_rent_stuff(inventory)
-            here
+            renting(inventory)
         elif user_input == 'Y':
             here
         else:
