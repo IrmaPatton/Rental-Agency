@@ -74,3 +74,23 @@ def change_invent_receipt(number, inventory):  #not completed
         here
     else:  # if it '4'
         here
+
+
+def show_what_to_rent(inventory):  # not tested yet
+    formated_inventory = format_rent_stuff(inventory)
+    return formated_inventory
+
+
+def user_rent_input():  # not tested yet
+    while True:
+        input_str = rent_input()
+        if rent_input_check(input_str) == None:
+            print('''
+Try again with a number 1 - 5.''')
+        else:
+            input_number = input_str
+            return input_number
+
+
+ def rent_time(user_number, inventory): # not completed
+    number = user_number blab blab blabs
