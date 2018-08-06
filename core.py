@@ -1,23 +1,26 @@
 def format_rent_stuff(inventory):
-    print('''SPACE THEMED VEHICLES
-1 - Medium Spaceship:
-        - Rental rate for a month: $5000
-        - Deposit: $1000
-        - Left in stock: {}
-2 - Podracers:
-        - Rental rate for 5 days: $1000
-        - Deposit: $500
-        - Left in stock: {}
-3 - Space Invader:
-        - Rental rate for a week: $4000
-        - Deposit: $800
-        - Left in stock: {}
-4 - Star Destroyer:
-        - Rental rate for a 5 days: $10000
-        - Deposit: $10000
-        - Left in stock: {}
-5 - Exit program'''.format(inventory[0][3], inventory[1][3], inventory[2][3],
-                           inventory[3][3]))
+    deposit_1 = inventory[0][2] / 10
+    deposit_2 = inventory[1][2] / 10
+    deposit_3 = inventory[2][2] / 10
+    deposit_4 = inventory[3][2] / 10
+    print(f'''SPACE THEMED VEHICLES
+1 - {inventory[0][0]}:
+        - Rental rate: ${inventory[0][1]}
+        - Deposit: ${deposit_1}
+        - Left in stock: {inventory[0][3]}
+2 - {inventory[1][0]}:
+        - Rental rate: ${inventory[1][1]}
+        - Deposit: ${deposit_2}
+        - Left in stock: {inventory[1][3]}
+3 - {inventory[2][0]}:
+        - Rental rate: {inventory[2][1]}
+        - Deposit: ${deposit_3}
+        - Left in stock: {inventory[2][3]}
+4 - {inventory[3][0]}:
+        - Rental rate: ${inventory[3][1]}
+        - Deposit: ${deposit_4}
+        - Left in stock: {inventory[3][3]}
+5 - Exit program''')
 
 
 def rent_input():
@@ -86,7 +89,7 @@ def change_invent_receipt(number, inventory):  #not completed
 
 
 def show_what_to_rent(inventory):  # not tested yet
-    pass
+    pass  # going to change format_rent_stuff function to be more any item friendly
     formated_inventory = format_rent_stuff(inventory)
     return formated_inventory
 
