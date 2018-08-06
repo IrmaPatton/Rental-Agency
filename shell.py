@@ -14,6 +14,10 @@ def make_inventory():
     return inventory
 
 
+def customer_or_employee():
+    # ask if customer or employee and goes to actions based on the input
+
+
 def show_what_to_rent(inventory):
     formated_inventory = format_rent_stuff(inventory)
     return formated_inventory
@@ -30,8 +34,8 @@ Try again with a number 1 - 5.''')
             return input_number
 
 
-#def rent_time(user_number, inventory):
-#    number = user_number blab blab blabs
+ def rent_time(user_number, inventory): # not completed
+    number = user_number blab blab blabs
 
 
 def main():
