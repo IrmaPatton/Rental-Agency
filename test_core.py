@@ -25,18 +25,3 @@ def test_format_rent_stuff(output):
     - Deposit: $2.0
     - Left in stock: 3
 E - Exit program'''
-
-
-@with_inputs('cat')
-def test_rent_input():
-    assert rent_input() == 'cat'
-
-
-def test_rent_input_check_not_number():
-    rent_str = 'dog'
-    assert rent_input_check(rent_str) == None
-
-
-def test_rent_input_check_if_number():
-    rent_str = '3'
-    assert rent_input_check(rent_str) == '3'
