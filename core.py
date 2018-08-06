@@ -44,6 +44,14 @@ def rent_input_check(input_str):
         None
 
 
+def customer_side():
+    pass
+
+
+def employee_side():
+    pass
+
+
 def change_invent_receipt(number, inventory):  #not completed
     # I'm not changing the inventory text file, i need to
     pass
