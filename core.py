@@ -13,30 +13,6 @@ def format_rent_stuff(inventory):
     print('E - Exit program')
 
 
-def rent_input():
-    rent_str = input('''
-What would you like to rent? ''')
-    return rent_str
-
-
-def rent_input_check(input_str):
-    if input_str.isdigit():
-        if input_str == '1':
-            return input_str
-        elif input_str == '2':
-            return input_str
-        elif input_str == '3':
-            return input_str
-        elif input_str == '4':
-            return input_str
-        elif input_str == '5':
-            return input_str
-        else:
-            None
-    else:
-        None
-
-
 def customer_side():
     pass
 
