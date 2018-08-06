@@ -46,6 +46,7 @@ def rent_input_check(input_str):
 
 def change_invent_receipt(number, inventory):  #not completed
     # I'm not changing the inventory text file, i need to
+    pass
     if input_str == '5':
         exit()
     elif input_str == '1':
@@ -77,11 +78,13 @@ def change_invent_receipt(number, inventory):  #not completed
 
 
 def show_what_to_rent(inventory):  # not tested yet
+    pass
     formated_inventory = format_rent_stuff(inventory)
     return formated_inventory
 
 
 def user_rent_input():  # not tested yet
+    pass
     while True:
         input_str = rent_input()
         if rent_input_check(input_str) == None:
@@ -92,5 +95,5 @@ Try again with a number 1 - 5.''')
             return input_number
 
 
- def rent_time(user_number, inventory): # not completed
-    number = user_number blab blab blabs
+def rent_time(user_number, inventory):  # not completed
+    pass
