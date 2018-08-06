@@ -13,6 +13,10 @@ def format_rent_stuff(inventory):
     print('E - Exit program')
 
 
+def renting(inventory):
+    here
+
+
 def customer_side(inventory):
     print('''X - Rent
 Y - Return''')
