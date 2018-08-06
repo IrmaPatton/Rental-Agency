@@ -78,12 +78,6 @@ def change_invent_receipt(number, inventory):  #not completed
         here
 
 
-def show_what_to_rent(inventory):  # not tested yet
-    pass  # going to change format_rent_stuff function to be more any item friendly
-    formated_inventory = format_rent_stuff(inventory)
-    return formated_inventory
-
-
 def user_rent_input():  # not tested yet
     pass
     while True:
