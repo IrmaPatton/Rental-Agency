@@ -13,9 +13,19 @@ def format_rent_stuff(inventory):
     print('E - Exit program')
 
 
-def customer_side():
-    pass
+def customer_side(inventory):
+    print('''X - Rent
+Y - Return''')
+    while True:
+        user_input = input('Are you renting or returning? ')
+        if user_input == 'X':
+            format_rent_stuff(inventory)
+            here
+        elif user_input == 'Y':
+            here
+        else:
+            print('Try typing in X or Y.')
 
 
 def employee_side():
-    pass
+    print('who who')
