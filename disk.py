@@ -35,3 +35,7 @@ def disk_main():
     file_list = file_list_split(file_str_list)
     inventory = make_inventory_list(file_list)
     return inventory
+
+
+def rent_update():
+    pass
