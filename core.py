@@ -46,11 +46,14 @@ Y - Return''')
         if user_input == 'X':
             format_rent_stuff(inventory)
             renting(inventory)
+            print('Thats all it does, no stock updating.')
+            exit()
         elif user_input == 'Y':
-            here
+            print('I didn\'t get this far')
+            exit()
         else:
             print('Try typing in X or Y.')
 
 
 def employee_side():
-    print('who who')
+    print('I\'m printed here to make shell work.')
