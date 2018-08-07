@@ -32,7 +32,9 @@ def get_rent_input(inventory):
 
 
 def renting(inventory):
-    pass
+    get_rent_input(inventory)
+    # change to inventory text file
+    # and put that change in history
 
 
 def customer_side(inventory):
