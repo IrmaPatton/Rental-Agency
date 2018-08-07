@@ -28,7 +28,7 @@ def get_rent_input(inventory):
                     'Please type in the number closest to what you want to rent.'
                 )
         else:
-            print('Please type a number')
+            print('Please type a number.')
 
 
 def renting(inventory):
