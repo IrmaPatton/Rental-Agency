@@ -13,11 +13,25 @@ def format_rent_stuff(inventory):
     print('E - Exit program')
 
 
+def get_rent_input():
+    # check if int and right numbers
+    # the pick number are the indexes so just check if that index exist
+    # check_number is how much things in inventory, it not say zero but count it anyway
+    # if user_input is lower or higher than check_number(beside zero) it wrong
+    user_input = input('What do you want to rent? ')
+    check_number = len(inventory)
+    check_number -= 1
+    while True:
+        if user_input == '0':
+            return user_input
+        elif user_input < check_number:
+            print('Invaded number try again')
+        elif user_input > check_number:
+            print('Invaded number try again')
+        elif user_input not 
+
+
 def renting(inventory):
-    # need to know how much stuff in inventory, to tell if user_input in good
-    item_count = 0
-    for item in inventory:
-        item_count + 1
 
 
 def customer_side(inventory):
