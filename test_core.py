@@ -43,3 +43,14 @@ def test_get_rent_input_not_number(output):
     assert output == '''What do you want to rent? int
 Please type a number.
 What do you want to rent? 0'''
+
+
+@with_inputs('4', '2')
+@should_print
+def test_get_rent_input_wrong_number(output):
+    fake_inventory = [['banana', 0, 20, 0], ['apple', 1, 20, 1],
+                      ['peanut', 2, 20, 2]]
+    assert get_rent_input(fake_inventory) == '2'
+    assert output == '''What do you want to rent? 4
+Please type in the number closest to what you want to rent.
+What do you want to rent? 2'''
