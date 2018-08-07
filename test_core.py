@@ -33,3 +33,13 @@ def test_get_rent_input(output):
     fake_inventory = [['banana', 0, 20, 0], ['apple', 1, 20, 1]]
     assert get_rent_input(fake_inventory) == '1'
     assert output == '''What do you want to rent? 1'''
+
+
+@with_inputs('int', '0')
+@should_print
+def test_get_rent_input_not_number(output):
+    fake_inventory = [['banana', 0, 20, 0], ['apple', 1, 20, 1]]
+    assert get_rent_input(fake_inventory) == '0'
+    assert output == '''What do you want to rent? int
+Please type a number.
+What do you want to rent? 0'''
