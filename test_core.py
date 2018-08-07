@@ -25,3 +25,11 @@ def test_format_rent_stuff(output):
     - Deposit: $2.0
     - Left in stock: 3
 E - Exit program'''
+
+
+@with_inputs('1')
+@should_print
+def test_get_rent_input(output):
+    fake_inventory = [['banana', 0, 20, 0], ['apple', 1, 20, 1]]
+    assert get_rent_input(fake_inventory) == '1'
+    assert output == '''What do you want to rent? 1'''
