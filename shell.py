@@ -23,7 +23,8 @@ E - Employee''')
         if user_input == 'C':
             customer_side(inventory)
         elif user_input == 'E':
-            employee_side(inventory)
+            employee_side()
+            break
         else:
             print('Try typing in C or E.')
 
