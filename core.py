@@ -13,7 +13,7 @@ def format_rent_stuff(inventory):
     print('E - Exit program')
 
 
-def get_rent_input():
+def get_rent_input(inventory):
     while True:
         user_input = input('What do you want to rent? ')
         check_number = len(inventory)
@@ -24,15 +24,19 @@ def get_rent_input():
             if user_input in range(0, check_number):
                 return str(user_input)
             else:
-                print('Please type in the number closest to what you want to rent.')
+                print(
+                    'Please type in the number closest to what you want to rent.'
+                )
         else:
             print('Please type a number')
 
 
 def renting(inventory):
+    pass
 
 
 def customer_side(inventory):
+    pass
     print('''X - Rent
 Y - Return''')
     while True:
