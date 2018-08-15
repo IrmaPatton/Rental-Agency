@@ -1,5 +1,4 @@
-from core import *
-from disk import *
+from disk import disk_main
 
 
 def greet():
@@ -29,8 +28,25 @@ E - Employee''')
             print('Try typing in C or E.')
 
 
-# functions that deal with printing and inputs
-def format_rent_stuff(inventory):
+def get_rent_input(inventory):  # used in renting in core but not here yet
+    while True:
+        user_input = input('What do you want to rent? ')
+        check_number = len(inventory)
+        if user_input == 'E':
+            exit()
+        elif user_input.isdigit():
+            user_input = int(user_input)
+            if user_input in range(0, check_number):
+                return str(user_input)
+            else:
+                print(
+                    'Please type in the number closest to what you want to rent.'
+                )
+        else:
+            print('Please type a number.')
+
+
+def format_rent_stuff(inventory):  # not needed in main
     print('Rent Items:')
     for item in inventory:
         deposit_cost = item[2] / 10
@@ -45,23 +61,26 @@ def format_rent_stuff(inventory):
     print('E - Exit program')
 
 
-def format_rent_stuff(inventory):
-    print('Rent Items:')
-    for item in inventory:
-        deposit_cost = item[2] / 10
-        index_number = inventory.index(item)
-        name = item[0]
-        rental_cost = item[1]
-        stock = item[3]
-        print(f'{index_number} - {name}:')
-        print('    - Rental rate: $', rental_cost, sep="")
-        print('    - Deposit: $', deposit_cost, sep="")
-        print('    - Left in stock: ', stock, sep="")
-    print('E - Exit program')
-
-
-def employee_side():
+def employee_side():  # not needed in main
     print('I\'m printed here to make shell work.')
+
+
+def customer_side(inventory):  # not needed in main
+    pass
+    print('''X - Rent
+Y - Return''')
+    while True:
+        user_input = input('Are you renting or returning? ')
+        if user_input == 'X':
+            format_rent_stuff(inventory)
+            renting(inventory)
+            print('Thats all it does, no stock updating.')
+            exit()
+        elif user_input == 'Y':
+            print('I didn\'t get this far')
+            exit()
+        else:
+            print('Try typing in X or Y.')
 
 
 def main():
