@@ -28,7 +28,7 @@ E - Employee''')
             print('Try typing in C or E.')
 
 
-def get_rent_input(inventory):  # used in renting in core but not here yet
+def get_rent_input(inventory):  # a function that gets the input for renting
     while True:
         user_input = input('What do you want to rent? ')
         check_number = len(inventory)
