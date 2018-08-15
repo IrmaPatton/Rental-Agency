@@ -37,5 +37,10 @@ def disk_main():
     return inventory
 
 
-def rent_update():
-    pass
+def rent_update(user_input,
+                inventory):  # should i put file name in the variable?
+    with open('inventory.txt', 'r') as invent_text:
+        first_line = invent_text.readline()
+    first_line_str = first_line.strip('\n')
+
+    inventory[user_input][4] = inventory[user_input][4] - 1
