@@ -73,7 +73,7 @@ Y - Return''')
         user_input = input('Are you renting or returning? ')
         if user_input == 'X':
             format_rent_stuff(inventory)
-            renting(inventory)
+            get_rent_input(inventory)
             print('Thats all it does, no stock updating.')
             exit()
         elif user_input == 'Y':
