@@ -1,5 +1,5 @@
-from disk import *
-from bcca.test import *
+from disk import open_file, file_list_split, make_inventory_list
+from bcca.test import fake_file
 
 
 @fake_file({'mock_file.txt': '''Title:
