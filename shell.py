@@ -1,4 +1,5 @@
-from disk import disk_main
+from disk import disk_main, write_inventory
+import core
 
 
 def greet():
@@ -14,11 +15,10 @@ def make_inventory():
 
 
 def customer_or_employee(inventory):
-    # ask if customer or employee and goes to actions based on the input
     print('''C - Customer
 E - Employee''')
     while True:
-        user_input = input('Are you a customer or employee? ')
+        user_input = input('Are you a customer or employee? ').upper().strip()
         if user_input == 'C':
             customer_side(inventory)
         elif user_input == 'E':
@@ -28,22 +28,64 @@ E - Employee''')
             print('Try typing in C or E.')
 
 
-def get_rent_input(inventory):  # a function that gets the input for renting
+def renting(inventory):  # a function that gets the input for renting
     while True:
-        user_input = input('What do you want to rent? ')
+        user_input = input('What do you want to rent?: ').upper().strip()
         check_number = len(inventory)
         if user_input == 'E':
             exit()
         elif user_input.isdigit():
             user_input = int(user_input)
             if user_input in range(0, check_number):
-                return str(user_input)
+                if core.out_of_stock(inventory, user_input) == True:
+                    print('This item is out of stock, try again.')
+                else:
+                    inventory[user_input][3] += -1
+                    inventory_string = core.make_inventory_string(inventory)
+                    write_inventory(
+                        'inventory.txt',
+                        inventory_string)  # make the history happen
+                    return
             else:
                 print(
                     'Please type in the number closest to what you want to rent.'
                 )
         else:
             print('Please type a number.')
+
+
+def returning(inventory):
+    while True:
+        user_input = input('What do you want to return?: ').upper().strip()
+        check_number = len(inventory)
+        if user_input == 'E':
+            exit()
+        elif user_input.isdigit():
+            user_input = int(user_input)
+            if user_input in range(0, check_number):
+                inventory[user_input][3] += 1
+                inventory_string = core.make_inventory_string(inventory)
+                write_inventory('inventory.txt',
+                                inventory_string)  # make the history happen
+                break
+            else:
+                print(
+                    'Please type in the number closest to what you want to return.'
+                )
+        else:
+            print('Please type a number.')
+
+
+def format_return_stuff(inventory):  # not needed in main
+    print('Return Item:')
+    for item in inventory:
+        deposit_cost = item[2] / 10
+        index_number = inventory.index(item)
+        name = item[0]
+        stock = item[3]
+        print(f'{index_number} - {name}:')
+        print('    - Deposit: $', deposit_cost, sep="")
+    print('E - Exit program')
 
 
 def format_rent_stuff(inventory):  # not needed in main
@@ -70,14 +112,14 @@ def customer_side(inventory):  # not needed in main
     print('''X - Rent
 Y - Return''')
     while True:
-        user_input = input('Are you renting or returning? ')
+        user_input = input('Are you renting or returning? ').upper().strip()
         if user_input == 'X':
             format_rent_stuff(inventory)
-            get_rent_input(inventory)
-            print('Thats all it does, no stock updating.')
+            renting(inventory)  # user receipt
             exit()
         elif user_input == 'Y':
-            print('I didn\'t get this far')
+            format_return_stuff(inventory)
+            returning(inventory)  # user receipt
             exit()
         else:
             print('Try typing in X or Y.')
