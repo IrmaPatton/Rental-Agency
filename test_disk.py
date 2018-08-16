@@ -1,4 +1,4 @@
-from disk import open_file, file_list_split, make_inventory_list
+from disk import open_file, file_list_split, make_inventory_list, write_inventory
 from bcca.test import fake_file
 
 
@@ -19,3 +19,11 @@ def test_make_inventory_list():
     file_list = ['cat, 12, 12, 12', 'done, 1, 1, 1']
     assert make_inventory_list(file_list) == [['cat', 12, 12, 12],
                                               ['done', 1, 1, 1]]
+
+
+@fake_file({'fake.txt': 'cat, 12, 12, 12'})
+def test_write_inventory():
+    fake_string = 'duh duh duh'
+    with open('fake.txt', 'w') as f:
+        f.write(fake_string)
+    assert open('fake.txt').read() == 'duh duh duh'
