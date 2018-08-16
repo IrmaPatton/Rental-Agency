@@ -29,18 +29,14 @@ def make_inventory_list(file_list):
     return inventory
 
 
+def write_inventory(filename, string):
+    with open(filename, 'w') as file:
+        file.write(string)
+
+
 def disk_main():
     file_name = 'inventory.txt'
     file_str_list = open_file(file_name)
     file_list = file_list_split(file_str_list)
     inventory = make_inventory_list(file_list)
     return inventory
-
-
-def rent_update(user_input,
-                inventory):  # should i put file name in the variable?
-    with open('inventory.txt', 'r') as invent_text:
-        first_line = invent_text.readline()
-    first_line_str = first_line.strip('\n')
-
-    inventory[user_input][4] = inventory[user_input][4] - 1
