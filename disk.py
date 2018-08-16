@@ -34,6 +34,28 @@ def write_inventory(filename, string):
         file.write(string)
 
 
+def open_history(filename):
+    with open(filename) as file:
+        contents = file.read()
+    return contents
+
+
+def open_revenue(filename):
+    with open(filename) as file:
+        revenue_list = file.readlines()
+    return revenue_list
+
+
+def write_revenue(filename, string):
+    with open(filename, 'w') as file:
+        file.write(string)
+
+
+def write_history(filename, string):
+    with open(filename, 'a') as file:
+        file.write(string)
+
+
 def disk_main():
     file_name = 'inventory.txt'
     file_str_list = open_file(file_name)
