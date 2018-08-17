@@ -1,6 +1,8 @@
 from disk import disk_main, write_inventory, write_history, open_history, open_revenue, write_revenue
 import core
 
+# make shell run pretty, doc str for esay understanding
+
 
 def greet():
     print('''                       Welcome to 
@@ -53,6 +55,8 @@ def renting(inventory, revenue):
                                      inventory[user_input][2])
                     revenue_string = core.make_revenue_string(revenue)
                     write_revenue('revenue.txt', revenue_string)
+                    #receipt stuff
+                    rent_receipt(user_input, inventory)
                     break
             else:
                 print(
@@ -83,6 +87,8 @@ def returning(inventory, revenue):
                 core.subtract_revenue(revenue, inventory[user_input][2])
                 revenue_string = core.make_revenue_string(revenue)
                 write_revenue('revenue.txt', revenue_string)
+                #receipt stuff
+                return_receipt(user_input, inventory)
                 break
             else:
                 print(
@@ -92,7 +98,7 @@ def returning(inventory, revenue):
             print('Please type a number.')
 
 
-def format_return_stuff(inventory):  # not needed in main
+def format_return_stuff(inventory):
     print('Return Item:')
     for item in inventory:
         deposit_cost = item[2] / 10
@@ -104,7 +110,7 @@ def format_return_stuff(inventory):  # not needed in main
     print('E - Exit program')
 
 
-def format_rent_stuff(inventory):  # not needed in main
+def format_rent_stuff(inventory):
     print('Rent Items:')
     for item in inventory:
         deposit_cost = item[2] / 10
@@ -119,7 +125,7 @@ def format_rent_stuff(inventory):  # not needed in main
     print('E - Exit program')
 
 
-def employee_side(inventory, revenue):  # not needed in main
+def employee_side(inventory, revenue):
     print('''Actions:
 S - See stock
 H - Review transaction history
@@ -150,7 +156,7 @@ def see_stock(inventory):
     print('E - Exit program')
 
 
-def customer_side(inventory, revenue):  # not needed in main
+def customer_side(inventory, revenue):
     pass
     print('''X - Rent
 Y - Return''')
@@ -158,14 +164,41 @@ Y - Return''')
         user_input = input('Are you renting or returning? ').upper().strip()
         if user_input == 'X':
             format_rent_stuff(inventory)
-            renting(inventory, revenue)  # user receipt
+            renting(inventory, revenue)
             exit()
         elif user_input == 'Y':
             format_return_stuff(inventory)
-            returning(inventory, revenue)  # user receipt
+            returning(inventory, revenue)
             exit()
         else:
             print('Try typing in X or Y.')
+
+
+def rent_receipt(user_input, inventory):
+    item = inventory[user_input][0]
+    rate = inventory[user_input][1]
+    tax = rate * .07
+    deposit = (inventory[user_input][2] * .10)
+    total = (rate + deposit + tax)
+    print(f'''
+Thanks for renting with us!
+        -------
+Total: ${total}
+        -------
+    Remember to return the
+          {item}.''')
+
+
+def return_receipt(user_input, inventory):
+    item = inventory[user_input][0]
+    deposit = (inventory[user_input][2] * .10)
+    print(f'''
+    Have a nice day!
+        -------
+Deposit: ${deposit}
+        -------
+Thank you for returning the
+          {item}.''')
 
 
 def main():
