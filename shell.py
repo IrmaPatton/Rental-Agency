@@ -27,7 +27,9 @@ E - Employee''')
             employee_side(inventory, revenue)
             break
         else:
-            print('Try typing in C or E.')
+            print('''
+Try typing in C or E.
+ ''')
 
 
 def renting(inventory, revenue):
@@ -63,7 +65,9 @@ def renting(inventory, revenue):
                     'Please type in the number closest to what you want to rent.'
                 )
         else:
-            print('Please type a number.')
+            print('''
+Please type a number.
+    ''')
 
 
 def returning(inventory, revenue):
@@ -91,15 +95,18 @@ def returning(inventory, revenue):
                 return_receipt(user_input, inventory)
                 break
             else:
-                print(
-                    'Please type in the number closest to what you want to return.'
-                )
+                print('''
+Please type in the number closest to what you want to return.
+ ''')
         else:
-            print('Please type a number.')
+            print('''
+Please type a number.
+ ''')
 
 
 def format_return_stuff(inventory):
-    print('Return Item:')
+    print('''
+Return Item:''')
     for item in inventory:
         deposit_cost = item[2] / 10
         index_number = inventory.index(item)
@@ -107,11 +114,14 @@ def format_return_stuff(inventory):
         stock = item[3]
         print(f'{index_number} - {name}:')
         print('    - Deposit: $', deposit_cost, sep="")
-    print('E - Exit program')
+        print(' ')
+    print('''E - Exit program
+ ''')
 
 
 def format_rent_stuff(inventory):
-    print('Rent Items:')
+    print('''
+Rent Items:''')
     for item in inventory:
         deposit_cost = item[2] / 10
         index_number = inventory.index(item)
@@ -122,11 +132,14 @@ def format_rent_stuff(inventory):
         print('    - Rental rate: $', rental_cost, sep="")
         print('    - Deposit: $', deposit_cost, sep="")
         print('    - Left in stock: ', stock, sep="")
-    print('E - Exit program')
+        print(' ')
+    print('''E - Exit program
+ ''')
 
 
 def employee_side(inventory, revenue):
-    print('''Actions:
+    print('''
+Actions:
 S - See stock
 H - Review transaction history
 R - Get total revenue
@@ -139,21 +152,29 @@ E - Exit''')
             see_stock(inventory)
         elif user_input == 'H':
             contents = open_history('history.txt')
+            print(' ')
             print(contents)
         elif user_input == 'R':
+            print(' ')
             print("Revenue: {:.2f}".format(revenue['total']))
+            print(' ')
         else:
-            print('blab')
+            print('''
+Please enter: E, S, H ,or R.
+    ''')
 
 
 def see_stock(inventory):
-    print('Stock:')
+    print('''
+Stock:''')
     for item in inventory:
         name = item[0]
         stock = item[3]
         print(f'{name}:')
         print('    - Left in stock: ', stock, sep="")
-    print('E - Exit program')
+        print(' ')
+    print('''E - Exit program
+ ''')
 
 
 def customer_side(inventory, revenue):
@@ -171,7 +192,9 @@ Y - Return''')
             returning(inventory, revenue)
             exit()
         else:
-            print('Try typing in X or Y.')
+            print('''
+Try typing in X or Y.
+ ''')
 
 
 def rent_receipt(user_input, inventory):
