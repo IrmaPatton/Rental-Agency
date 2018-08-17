@@ -1,4 +1,4 @@
-from disk import open_file, file_list_split, make_inventory_list, write_inventory
+from disk import open_file, file_list_split, make_inventory_list, write_inventory, write_revenue, write_history
 from bcca.test import fake_file
 
 
@@ -27,3 +27,20 @@ def test_write_inventory():
     with open('fake.txt', 'w') as f:
         f.write(fake_string)
     assert open('fake.txt').read() == 'duh duh duh'
+
+
+@fake_file({'mock_file.txt': 'i will change'})
+def test_write_revenue():
+    string = 'I HAVE CHANGED, FEAR ME!'
+    with open('mock_file.txt', 'w') as f:
+        f.write(string)
+    assert open('mock_file.txt').read() == 'I HAVE CHANGED, FEAR ME!'
+
+
+@fake_file({'fake.txt': 'i am lonely :-(\n'})
+def test_write_history():
+    string = 'I will be your friend :-D'
+    with open('fake.txt', 'a') as f:
+        f.write(string)
+    assert open('fake.txt').read() == '''i am lonely :-(
+I will be your friend :-D'''
