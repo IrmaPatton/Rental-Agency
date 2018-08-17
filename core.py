@@ -5,6 +5,7 @@ def make_inventory_string(inventory):
     return s
 
 
+# put doc strs for easy understanding
 def out_of_stock(inventory, index):
     if inventory[index][3] <= 0:
         return True
@@ -28,6 +29,7 @@ def make_revenue_dictionary(revenue_list):
 
 
 def make_revenue_string(revenue):
+    string = ""
     for key in revenue:
         string = "{}, {}".format(key, revenue[key])
     return string
